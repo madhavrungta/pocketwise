@@ -4,4 +4,5 @@ dist/
 .env.*
 !.env.example
 npm-debug.log*
-
+/data/expenses.json
+/utils/data/expenses.json
