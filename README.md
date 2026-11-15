@@ -82,7 +82,7 @@ The backend writes to `utils/data/expenses.json` by default. If the file is miss
 
 ## Deployment
 
-The Vite proxy is development-only. For a single-origin deployment, the Express server can serve `dist/` when `NODE_ENV=production`. The included `render.yaml` configures this setup for Render, with JSON data on a persistent disk; that Blueprint uses a paid Render service plan.
+The Vite proxy is development-only. For a single-origin deployment, the Express server can serve `dist/` when `NODE_ENV=production`. The included `render.yaml` deploys this setup on Render's free plan without requiring payment details. Free web services sleep after inactivity and use ephemeral storage, so JSON expense data can be lost on sleep, restart, or redeploy. For durable hosted data, connect a database such as Supabase or use a paid Render plan with a persistent disk.
 
 Vercel can host the React app and Express API on its free Hobby plan for personal projects, but its serverless filesystem is not persistent. To keep expenses there, first replace JSON storage with a hosted database (for example, Supabase) and configure the required environment variables. No production deployment has been completed from this repository.
 
